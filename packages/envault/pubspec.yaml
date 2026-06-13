@@ -4,7 +4,7 @@ description: >
   AES-256-GCM encryption in generated code, SecureString type,
   build-time validation, and git hygiene enforcement.
   The only Dart package with a derived key (never stored in binary).
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/gunjan1sharma/envault
 repository: https://github.com/gunjan1sharma/envault
 issue_tracker: https://github.com/gunjan1sharma/envault/issues

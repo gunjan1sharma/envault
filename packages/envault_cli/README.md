@@ -7,7 +7,7 @@ If you decompile a Flutter app built with `envied` or `flutter_dotenv` today, yo
 [![Pub Version](https://img.shields.io/pub/v/envault)](https://pub.dev/packages/envault)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-[Read the Technical Whitepaper](https://drive.google.com/your-drive-link-here)
+[Read the Technical Whitepaper (PDF)](https://smallpdf.com/file#s=5ad5c618-a4e1-44eb-8e43-5097da5328c3)
 
 ## Why existing solutions fail at scale
 
