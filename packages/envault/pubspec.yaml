@@ -5,9 +5,9 @@ description: >
   build-time validation, and git hygiene enforcement.
   The only Dart package with a derived key (never stored in binary).
 version: 0.1.0
-homepage: https://github.com/envault/envault
-repository: https://github.com/envault/envault
-issue_tracker: https://github.com/envault/envault/issues
+homepage: https://github.com/gunjan1sharma/envault
+repository: https://github.com/gunjan1sharma/envault
+issue_tracker: https://github.com/gunjan1sharma/envault/issues
 
 environment:
   sdk: ">=3.5.0 <4.0.0"
