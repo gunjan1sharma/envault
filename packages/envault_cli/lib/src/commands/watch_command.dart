@@ -51,7 +51,7 @@ class WatchCommand {
       
       final watcher = file.watch(events: FileSystemEvent.modify | FileSystemEvent.create);
       
-      await for (final event in watcher) {
+      await for (final _ in watcher) {
         if (debounceTimer?.isActive ?? false) {
           debounceTimer!.cancel();
         }

@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:test/test.dart';
 import 'package:envault_cli/src/crypto/key_derivation.dart';
 
