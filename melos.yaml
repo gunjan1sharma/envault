@@ -1,0 +1,36 @@
+name: envault_workspace
+
+packages:
+  - packages/**
+  - example
+
+sdkPath: auto
+
+command:
+  version:
+    workspaceChangelog: true
+
+scripts:
+  test:
+    run: melos exec --dir-exists=test -- dart test
+    description: Run all unit tests across all packages.
+
+  test:coverage:
+    run: melos exec --dir-exists=test -- dart test --coverage=coverage
+    description: Run tests with coverage.
+
+  analyze:
+    run: melos exec -- dart analyze --fatal-infos
+    description: Run dart analyze across all packages.
+
+  format:
+    run: melos exec -- dart format lib test bin --set-exit-if-changed
+    description: Format all Dart code.
+
+  clean:
+    run: melos exec -- dart run build_runner clean
+    description: Clean build artifacts (only for packages using build_runner).
+
+  get:
+    run: melos exec -- dart pub get
+    description: Run pub get for all packages.

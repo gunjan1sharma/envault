@@ -1,0 +1,9 @@
+name: envault_workspace
+description: Workspace root for the envault monorepo.
+publish_to: none
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+dev_dependencies:
+  melos: ^7.8.2
