@@ -1,9 +1,5 @@
 name: envault
-description: >
-  Fintech-grade secret management for Flutter/Dart.
-  AES-256-GCM encryption in generated code, SecureString type,
-  build-time validation, and git hygiene enforcement.
-  The only Dart package with a derived key (never stored in binary).
+description: Fintech-grade secret management for Flutter/Dart. AES-256-GCM encryption in generated code, SecureString type, build-time validation, and runtime derived keys.
 version: 0.1.2
 homepage: https://github.com/gunjan1sharma/envault
 repository: https://github.com/gunjan1sharma/envault
