@@ -14,11 +14,6 @@ dependencies:
   path: ^1.9.0
   analyzer: '>=6.0.0 <7.0.0'
 
-# Local override so tests resolve to the monorepo envault package.
-# Remove this block before running dart pub publish.
-dependency_overrides:
-  envault:
-    path: ../envault
 
 dev_dependencies:
   test: ^1.25.0
