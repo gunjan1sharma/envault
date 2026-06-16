@@ -81,7 +81,7 @@
     },
     {
       "name": "envault",
-      "rootUri": "../../envault",
+      "rootUri": "file:///Users/gunjandev/.pub-cache/hosted/pub.dev/envault-1.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },

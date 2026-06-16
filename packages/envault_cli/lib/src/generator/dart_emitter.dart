@@ -106,8 +106,8 @@ class DartCodeEmitter {
     buffer.writeln('      throw VaultConfigurationException(');
     buffer.writeln("        'VAULT_MASTER_PASSWORD is not set.\\n'");
     buffer.writeln("        'Build your app with:\\n'");
-    buffer.writeln("        '  flutter run --dart-define=VAULT_MASTER_PASSWORD=\$YOUR_SECRET\\n'");
-    buffer.writeln("        '  flutter build apk --dart-define=VAULT_MASTER_PASSWORD=\$YOUR_SECRET\\n'");
+    buffer.writeln("        '  flutter run --dart-define=VAULT_MASTER_PASSWORD=<YOUR_SECRET>\\n'");
+    buffer.writeln("        '  flutter build apk --dart-define=VAULT_MASTER_PASSWORD=<YOUR_SECRET>\\n'");
     buffer.writeln("        'Run \"envault keygen\" to generate a secure password.',");
     buffer.writeln('      );');
     buffer.writeln('    }');
@@ -144,7 +144,7 @@ class DartCodeEmitter {
     buffer.writeln('    if (masterPassword.isEmpty) {');
     buffer.writeln('      throw VaultConfigurationException(');
     buffer.writeln("        'VAULT_MASTER_PASSWORD is not set. '");
-    buffer.writeln("        'Build with --dart-define=VAULT_MASTER_PASSWORD=\$YOUR_SECRET.',");
+    buffer.writeln("        'Build with --dart-define=VAULT_MASTER_PASSWORD=<YOUR_SECRET>.',");
     buffer.writeln('      );');
     buffer.writeln('    }');
     buffer.writeln();

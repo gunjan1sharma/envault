@@ -1,3 +1,7 @@
+## 1.0.1
+
+* **FIX:** Resolved a compilation error in generated `vault.g.dart` caused by string interpolation (`$YOUR_SECRET`) in error messages.
+
 ## 1.0.0 — First Stable Release (Breaking Security Fix)
 
 > ⚠️ **BREAKING:** All existing `vault.g.dart` files must be regenerated after upgrading.

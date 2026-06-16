@@ -108,9 +108,10 @@ packages:
   envault:
     dependency: "direct main"
     description:
-      path: "../envault"
-      relative: true
-    source: path
+      name: envault
+      sha256: "094080f5bfaeedadce8bcd82bf8e4337d27272658c29399cc970e41ab4b1eef5"
+      url: "https://pub.dev"
+    source: hosted
     version: "1.0.0"
   ffi:
     dependency: transitive

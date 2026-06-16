@@ -14,4 +14,7 @@ abstract class Vault {
     minEntropyBits: 128,
   )
   static SecureString get apiKey => _Vault.apiKey;
+
+  @VaultField(varName: 'ANOTHER_KEY')
+  static SecureString get anotherKey => _Vault.anotherKey;
 }

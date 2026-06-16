@@ -1,6 +1,6 @@
 name: envault_cli
 description: Standalone CLI code generator for the envault package. Encrypts your .env file into a secure dart vault using AES-256-GCM.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/gunjan1sharma/envault
 repository: https://github.com/gunjan1sharma/envault
 
