@@ -82,7 +82,6 @@ Future<void> main() async {
   runApp(const MyApp());
 }
 ```
-```
 
 2. **Define your vault** in `vault.dart`:
 ```dart
