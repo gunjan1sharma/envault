@@ -1,6 +1,6 @@
 name: envault_cli
 description: Standalone CLI code generator for the envault package. Encrypts your .env file into a secure dart vault using AES-256-GCM.
-version: 0.1.2
+version: 1.0.0
 homepage: https://github.com/gunjan1sharma/envault
 repository: https://github.com/gunjan1sharma/envault
 
@@ -8,12 +8,17 @@ environment:
   sdk: ">=3.5.0 <4.0.0"
 
 dependencies:
-  envault: ^0.1.0
+  envault: ^1.0.0
   cryptography: ^2.7.0
   args: ^2.5.0
   path: ^1.9.0
   analyzer: '>=6.0.0 <7.0.0'
 
+# Local override so tests resolve to the monorepo envault package.
+# Remove this block before running dart pub publish.
+dependency_overrides:
+  envault:
+    path: ../envault
 
 dev_dependencies:
   test: ^1.25.0

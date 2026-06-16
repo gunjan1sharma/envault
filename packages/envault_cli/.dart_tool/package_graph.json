@@ -5,7 +5,7 @@
   "packages": [
     {
       "name": "envault_cli",
-      "version": "0.1.2",
+      "version": "1.0.0",
       "dependencies": [
         "analyzer",
         "args",
@@ -16,6 +16,15 @@
       "devDependencies": [
         "lints",
         "test"
+      ]
+    },
+    {
+      "name": "envault",
+      "version": "1.0.0",
+      "dependencies": [
+        "cryptography",
+        "cryptography_flutter",
+        "meta"
       ]
     },
     {
@@ -92,6 +101,19 @@
         "ffi",
         "meta",
         "typed_data"
+      ]
+    },
+    {
+      "name": "meta",
+      "version": "1.16.0",
+      "dependencies": []
+    },
+    {
+      "name": "cryptography_flutter",
+      "version": "2.3.4",
+      "dependencies": [
+        "cryptography",
+        "flutter"
       ]
     },
     {
@@ -340,11 +362,6 @@
       ]
     },
     {
-      "name": "meta",
-      "version": "1.16.0",
-      "dependencies": []
-    },
-    {
       "name": "glob",
       "version": "2.1.3",
       "dependencies": [
@@ -380,6 +397,18 @@
       "name": "ffi",
       "version": "2.2.0",
       "dependencies": []
+    },
+    {
+      "name": "flutter",
+      "version": "0.0.0",
+      "dependencies": [
+        "characters",
+        "collection",
+        "material_color_utilities",
+        "meta",
+        "sky_engine",
+        "vector_math"
+      ]
     },
     {
       "name": "string_scanner",
@@ -468,35 +497,6 @@
       "dependencies": [
         "meta",
         "path"
-      ]
-    },
-    {
-      "name": "envault",
-      "version": "0.1.2",
-      "dependencies": [
-        "cryptography",
-        "cryptography_flutter",
-        "meta"
-      ]
-    },
-    {
-      "name": "cryptography_flutter",
-      "version": "2.3.4",
-      "dependencies": [
-        "cryptography",
-        "flutter"
-      ]
-    },
-    {
-      "name": "flutter",
-      "version": "0.0.0",
-      "dependencies": [
-        "characters",
-        "collection",
-        "material_color_utilities",
-        "meta",
-        "sky_engine",
-        "vector_math"
       ]
     },
     {

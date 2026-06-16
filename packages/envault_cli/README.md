@@ -30,7 +30,7 @@ If you decompile a Flutter app built with `envied` or `flutter_dotenv` today, yo
 ```yaml
 # pubspec.yaml
 dependencies:
-  envault: ^0.1.0
+  envault: ^1.0.0
   cryptography_flutter: ^2.3.4 # Required for hardware-accelerated decryption
 ```
 
@@ -39,16 +39,49 @@ Install the generator globally:
 dart pub global activate envault_cli
 ```
 
+## Setup (One-Time Per Project)
+
+### Step 1 — Generate a master password
+```bash
+envault keygen
+```
+This generates a 384-bit cryptographically secure password. Copy the output.
+
+### Step 2 — Store it locally (for development) and in CI/CD
+```bash
+# Local development
+echo "your-generated-password" > .vault_key
+echo ".vault_key" >> .gitignore   # CRITICAL — never commit this file
+
+# CI/CD: Add VAULT_MASTER_PASSWORD as a repository secret
+# GitHub Actions: Settings → Secrets → New repository secret
+# Codemagic:      App settings → Environment variables
+```
+
+### Step 3 — Generate your encrypted vault
+```bash
+envault generate
+```
+
 ## Usage
 
-1. **Initialize hardware crypto** in your `main.dart`:
+1. **Call `assertVaultPassword()` in `main.dart`** before `runApp()`:
 ```dart
-import 'package:cryptography_flutter/cryptography_flutter.dart';
+import 'vault.dart'; // your vault file, which parts vault.g.dart
 
-void main() {
-  FlutterCryptography.enable(); // Ensures we use OS-level crypto APIs
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Verifies VAULT_MASTER_PASSWORD at startup.
+  // Throws VaultConfigurationException if:
+  //   - --dart-define=VAULT_MASTER_PASSWORD was not set at build time
+  //   - The password used in flutter build differs from envault generate
+  // Catches mismatches before any decryption is attempted.
+  await assertVaultPassword();
+
   runApp(const MyApp());
 }
+```
 ```
 
 2. **Define your vault** in `vault.dart`:

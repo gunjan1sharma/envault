@@ -1,0 +1,15 @@
+workflows:
+  android-release:
+    environment:
+      vars:
+        VAULT_MASTER_PASSWORD: $VAULT_MASTER_PASSWORD  # Set in Codemagic UI → Environment
+    scripts:
+      - name: Install envault CLI
+        script: dart pub global activate envault_cli
+      - name: Generate vault
+        script: envault generate --package=com.myapp --flavor=prod
+      - name: Build APK
+        script: |
+          flutter build apk \
+            --dart-define=VAULT_MASTER_PASSWORD=$VAULT_MASTER_PASSWORD \
+            --release

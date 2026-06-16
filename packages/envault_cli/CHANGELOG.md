@@ -1,6 +1,19 @@
+## 1.0.0 — First Stable Release (Breaking Security Fix)
+
+> ⚠️ **BREAKING:** All existing `vault.g.dart` files must be regenerated after upgrading.
+> Run `envault generate` with your `VAULT_MASTER_PASSWORD`.
+
+* **CRITICAL SECURITY FIX:** Removed `fallback_zero_config_key` from generated code.
+* Added `envault keygen` command — generates a 384-bit cryptographically secure master password.
+* `envault generate` now requires `VAULT_MASTER_PASSWORD` or a `.vault_key` file.
+  No password → hard failure with clear setup instructions. No silent fallback.
+* Fingerprint embedded in generated code for startup mismatch detection.
+* Added `.vault_key` gitignore enforcement to prevent accidental password commits.
+* Added CI/CD templates in `docs/ci_cd/` for GitHub Actions and Codemagic.
+
 ## 0.1.2
 
-* Updated documentation links (Compliance, Threat Model, Security, Migration Guide) in README.
+* Updated documentation links in README.
 
 ## 0.1.1
 
