@@ -90,7 +90,17 @@ envault validate
 ```
 This checks your `.env` against Shannon entropy thresholds and regex heuristics to ensure you aren't accidentally checking in placeholder values like `YOUR_API_KEY_HERE`.
 
-## Limitations & Threat Model
+## Security & Architecture Documentation
+
+To ensure `envault` meets enterprise and fintech standards, we maintain detailed documentation on our threat models, compliance, and security disclosures.
+
+* 📄 **[Technical Whitepaper (PDF)](https://smallpdf.com/file#s=5ad5c618-a4e1-44eb-8e43-5097da5328c3)** - Cryptographic pipeline and memory safety analysis.
+* 🛡️ **[Threat Model](https://github.com/gunjan1sharma/envault/blob/main/THREAT_MODEL.md)** - What we protect against (and what we don't).
+* 📜 **[Compliance (PCI-DSS, MASVS)](https://github.com/gunjan1sharma/envault/blob/main/COMPLIANCE.md)** - Security standard mappings for auditors.
+* 🔒 **[Security Policy](https://github.com/gunjan1sharma/envault/blob/main/SECURITY.md)** - Vulnerability disclosure and reporting guidelines.
+* 📦 **[Migration Guide](https://github.com/gunjan1sharma/envault/blob/main/MIGRATION.md)** - How to migrate from `envied` or `flutter_dotenv`.
+
+## Limitations
 
 **What this protects against:**
 - Static analysis (`strings app.apk`, `apktool`).
@@ -99,5 +109,3 @@ This checks your `.env` against Shannon entropy thresholds and regex heuristics 
 
 **What this does NOT protect against:**
 - **Arbitrary Memory Reads (Frida/Rooted devices)**: If an attacker roots the device and hooks the Dart VM, they can read the heap. Dart strings are immutable and cannot be manually zeroed via C-style `memset`. If you need absolute zero-trust memory wiping, you need an FFI-based RASP (Runtime Application Self-Protection) solution. `envault` secures the resting state and greatly reduces the memory attack surface, but it is bound by the laws of the Dart VM.
-
-For full PCI-DSS and OWASP MASVS mappings, see [COMPLIANCE.md](COMPLIANCE.md).
